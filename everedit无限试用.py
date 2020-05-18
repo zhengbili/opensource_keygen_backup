@@ -1,7 +1,7 @@
 import winreg
 import time
 
-everedit_time_path="Software\Classes\ZQBKAF8ATWBDADIAMWAZ"#这个每台电脑可能不一样
+everedit_time_path="Software\Classes\ZQBKAF8ATWBDADIAMWAZ"#注册表项，每台电脑可能不一样
 everedit_time_key=winreg.OpenKey(winreg.HKEY_CURRENT_USER,everedit_time_path,0,winreg.KEY_ALL_ACCESS)
 key_name,key_value,key_type=winreg.EnumValue(everedit_time_key,0)
 old_time=int.from_bytes(key_value,'little')
